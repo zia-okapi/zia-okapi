@@ -1,5 +1,5 @@
 # Zia-Okapi
-
+![](http://dl.dropbox.com/u/35922551/okapi.png)
 Welcome to the our github repository.
 
 Feel free to ask any questions by opening a new issue, please check your problem has not been solved or asked yet by checking the [closed issues](https://github.com/Intrepidd/zia-okapi/issues?sort=created&direction=desc&state=closed&page=1).
