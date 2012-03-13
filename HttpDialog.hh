@@ -1,6 +1,10 @@
 #ifndef			_HTTPDIALOG_HH_
 # define		_HTTPDIALOG_HH_
 
+///
+/// \file HttpDialog.hh
+///
+
 # include		"IPluginManager.hh"
 # include		"IConnection.hh"
 # include		"http/Request.hh"
