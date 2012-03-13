@@ -23,7 +23,7 @@ namespace okapi
   public:
 
     ///
-    /// \fn CommunicationPlugin(IPluginManager & pluginManager)
+    /// \fn HttpDialog(IPluginManager & pluginManager)
     /// \brief Constructor
     /// \param pluginManager The plugin manager from the server
     /// \param connection The connection that the object will encapsulate.
