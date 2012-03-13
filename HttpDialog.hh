@@ -1,6 +1,10 @@
 #ifndef			_HTTPDIALOG_HH_
 # define		_HTTPDIALOG_HH_
 
+///
+/// \file HttpDialog.hh
+///
+
 # include		"IPluginManager.hh"
 # include		"IConnection.hh"
 # include		"http/Request.hh"
@@ -23,7 +27,7 @@ namespace okapi
   public:
 
     ///
-    /// \fn CommunicationPlugin(IPluginManager & pluginManager)
+    /// \fn HttpDialog(IPluginManager & pluginManager)
     /// \brief Constructor
     /// \param pluginManager The plugin manager from the server
     /// \param connection The connection that the object will encapsulate.
