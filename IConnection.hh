@@ -22,6 +22,10 @@ namespace okapi
   {
   public:
 
+    ///
+    /// \enum Status
+    ///
+
     enum Status
     {
       ALLOW, DISALLOW
