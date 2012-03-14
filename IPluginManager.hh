@@ -36,6 +36,8 @@ namespace okapi
       ON_SERVER_START,
       /// When a connection arrives
       ON_CONNECTION,
+      /// When data is read from a specific protocol
+      ON_DATA_READ_PROTOCOL,
       /// When a request is completed
       ON_REQUEST,
       /// When the body is created
@@ -46,6 +48,8 @@ namespace okapi
       BODY_MODIFIER,
       /// When the response is ready to be sent
       ON_RESPONSE_READY,
+      /// When data is about to be written to a specific protocol
+      ON_DATA_WRITE_PROTOCOL,
       /// When the response has been sent
       ON_RESPONSE_SENT,
       /// When the server stops
