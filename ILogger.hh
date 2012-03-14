@@ -38,8 +38,6 @@ namespace okapi
       WARNING
     };
 
-    ILogger(void);
-
     ///
     /// \fn virtual log(LogLevel level, std::string message) = 0;
     /// \brief Logs a message with a precise log level
