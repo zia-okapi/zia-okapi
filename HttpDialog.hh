@@ -1,14 +1,14 @@
-#ifndef			_HTTPDIALOG_HH_
-# define		_HTTPDIALOG_HH_
+#ifndef     _HTTPDIALOG_HH_
+# define    _HTTPDIALOG_HH_
 
 ///
 /// \file HttpDialog.hh
 ///
 
-# include		"IPluginManager.hh"
-# include		"IConnection.hh"
-# include		"http/Request.hh"
-# include		"http/Response.hh"
+# include   "IPluginManager.hh"
+# include   "IConnection.hh"
+# include   "http/Request.hh"
+# include   "http/Response.hh"
 
 ///
 /// \namespace okapi
@@ -21,7 +21,7 @@ namespace okapi
   /// \class HttpDialog
   ///
 
-  class			HttpDialog
+  class HttpDialog
   {
 
   public:
@@ -41,16 +41,16 @@ namespace okapi
     /// \brief The main function of the class, used to continue the communication process
     ///
 
-    void		process(void);
+    void    process(void);
 
   private:
-    IPluginManager &	_pluginManager;
-    IConnection		_connection;
-    htpp::Request *	_request;
-    http::Response *	_response;
+    IPluginManager &_pluginManager;
+    IConnection _connection;
+    htpp::Request * _request;
+    http::Response * _response;
 
   };
 
 }
 
-#endif			// !_HTTPDIALOG_HH_
+#endif      // !_HTTPDIALOG_HH_
