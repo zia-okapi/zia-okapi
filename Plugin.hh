@@ -6,6 +6,7 @@
 ///
 
 # include <string>
+# include <vector>
 
 # include "IPluginManager.hh"
 # include "IConnection.hh"
@@ -93,6 +94,14 @@ namespace okapi
     virtual IConnection::Status onConnection(IConnection const &) { return IConnection::ALLOW; }
 
     ///
+    /// \fn virtual void onDataReadProtocol(std::string const &, std::vector<char> &)
+    /// \param protocol The name of the protocol that is being handled
+    /// \param data The raw data that has been received on the socket, modify it as you wish
+    ///
+
+    virtual void onDataReadProtocol(std::string const &, std::vector<char> &) {}
+
+    ///
     /// \fn virtual void onRequest(http::Request const &)
     /// \brief This hook is called just after a request is received by the zia server
     /// \param request The http request object that has been received
@@ -136,6 +145,14 @@ namespace okapi
     ///
 
     virtual void onResponseReady(http::Response &) {}
+
+    ///
+    /// \fn virtual void onDataWriteProtocol(std::string const &, std::vector<char> &)
+    /// \param protocol The name of the protocol that is being handled
+    /// \param data The raw data that is going to be sent, modify it as you wish
+    ///
+
+    virtual void onDataWriteProtocol(std::string const &, std::vector<char> &) {}
 
     ///
     /// virtual void onResponseSent(http::Response const &)
