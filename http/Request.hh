@@ -35,9 +35,12 @@ namespace okapi
       ///
 
       enum Status
-	{
-	  CONTINUE, ABORT
-	};
+      {
+        // Continue the request
+        CONTINUE,
+        // Abort the request
+        ABORT
+      };
 
       ///
       /// \enum Method
@@ -45,9 +48,9 @@ namespace okapi
       ///
 
       enum Method
-	{
-	  HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT, PATCH
-	};
+      {
+        HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT, PATCH
+      };
 
       Request(void);
 
@@ -73,21 +76,21 @@ namespace okapi
       /// \return A Method enum, the HTTP method of the request
       ///
 
-      Method	getMethod(void) {return (this->_method);}
+      Method getMethod(void);
 
       ///
       /// \fn void setMethod(Method const method)
-      /// \brief Sets the HTTP method of the request 
+      /// \brief Sets the HTTP method of the request
       /// \return void
       ///
 
-      void	setMethod(Method const method) {this->_method = method;}
+      void  setMethod(Method const method);
 
     private:
 
-      Header	_header;
-      Body	_body;
-      Method	_method;
+      Header _header;
+      Body _body;
+      Method _method;
     };
 
   }
