@@ -12,6 +12,8 @@ You can join us on our IRC chan : #okapi on irc.epitech.eu
 
 You can also like our facebook page for real time informations: https://www.facebook.com/zia.okapi
 
+**Before asking questions though, please check our [F.A.Q And tutorial](https://github.com/zia-okapi/zia-okapi/wiki)!**
+
 **Our latest doxygen can be found [here](http://zia-okapi.github.com/)**
 
 # Don't panic!
