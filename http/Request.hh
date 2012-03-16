@@ -39,6 +39,16 @@ namespace okapi
 	  CONTINUE, ABORT
 	};
 
+      ///
+      /// \enum Method
+      /// \brief Http method of the request
+      ///
+
+      enum Method
+	{
+	  HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT, PATCH
+	};
+
       Request(void);
 
       ///
@@ -57,10 +67,27 @@ namespace okapi
 
       Body &getBody(void);
 
+      ///
+      /// \fn Method getMethod(void)
+      /// \brief Gets the HTTP method of the request
+      /// \return A Method enum, the HTTP method of the request
+      ///
+
+      Method	getMethod(void) {return (this->_method);}
+
+      ///
+      /// \fn void setMethod(Method const method)
+      /// \brief Sets the HTTP method of the request 
+      /// \return void
+      ///
+
+      void	setMethod(Method const method) {this->_method = method;}
+
     private:
 
-      Header _header;
-      Body _body;
+      Header	_header;
+      Body	_body;
+      Method	_method;
     };
 
   }
