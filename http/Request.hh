@@ -35,9 +35,9 @@ namespace okapi
       ///
 
       enum Status
-	{
-	  CONTINUE, ABORT
-	};
+      {
+        CONTINUE, ABORT
+      };
 
       Request(void);
 
