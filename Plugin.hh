@@ -95,11 +95,12 @@ namespace okapi
 
     ///
     /// \fn virtual void onDataRead(std::string const &, std::vector<char> &)
+    /// \param connection The connection object so we know where this data come from
     /// \param protocol The name of the protocol that is being handled or 'none'
     /// \param data The raw data that has been received on the socket, modify it as you wish
     ///
 
-    virtual void onDataRead(std::string const &, std::vector<char> &) {}
+    virtual void onDataRead(IConnection const &, std::string const &, std::vector<char> &) {}
 
     ///
     /// \fn virtual void onRequest(http::Request const &)
@@ -148,11 +149,12 @@ namespace okapi
 
     ///
     /// \fn virtual void onDataWrite(std::string const &, std::vector<char> &)
+    /// \param connection The connection object so we know where this data is to be sent
     /// \param protocol The name of the protocol that is being handled or 'none'
     /// \param data The raw data that is going to be sent, modify it as you wish
     ///
 
-    virtual void onDataWrite(std::string const &, std::vector<char> &) {}
+    virtual void onDataWrite(IConnection const &, std::string const &, std::vector<char> &) {}
 
     ///
     /// virtual void onResponseSent(http::Response const &)
