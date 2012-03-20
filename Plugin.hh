@@ -38,7 +38,7 @@ namespace okapi
     /// \param pluginManager The plugin manager of the zia
     ///
 
-    Plugin(IPluginManager &) {}
+    Plugin(IPluginManager & /* pluginManager */) {}
     virtual ~Plugin(void) {}
 
     ///
@@ -64,7 +64,7 @@ namespace okapi
     /// \return true only if the plugin can handle the protocol
     ///
 
-    virtual bool canHandle(std::string const &) { return (false); }
+    virtual bool canHandle(std::string const & /* protocol */) { return (false); }
 
     ///////////////////////////
     //         Hooks         //
@@ -91,7 +91,7 @@ namespace okapi
     /// \return The status of the connection, this allows the plugin to accept or deny the connection
     ///
 
-    virtual IConnection::Status onConnection(IConnection const &) { return IConnection::ALLOW; }
+    virtual IConnection::Status onConnection(IConnection const & /* connection */) { return IConnection::ALLOW; }
 
     ///
     /// \fn virtual void onDataRead(std::string const &, std::vector<char> &)
@@ -100,7 +100,7 @@ namespace okapi
     /// \param data The raw data that has been received on the socket, modify it as you wish
     ///
 
-    virtual void onDataRead(IConnection const &, std::string const &, std::vector<char> &) {}
+    virtual void onDataRead(IConnection const & /* connection */, std::string const & /* protocol */, std::vector<char> & /* data */) {}
 
     ///
     /// \fn virtual void onRequest(http::Request const &)
@@ -109,7 +109,7 @@ namespace okapi
     /// \return The status of the request being generated, this allows to continue or abort the request
     ///
 
-    virtual http::Request::Status onRequest(http::Request const &) { return http::Request::CONTINUE; }
+    virtual http::Request::Status onRequest(http::Request const & /* request */) { return http::Request::CONTINUE; }
 
     ///
     /// virtual void onBodyCreation(http::Body &)
@@ -119,7 +119,7 @@ namespace okapi
     /// \return The status of the request being generated, this allows to continue or abort the request
     ///
 
-    virtual http::Request::Status onBodyCreation(http::Body &, http::Header &) { return http::Request::CONTINUE; }
+    virtual http::Request::Status onBodyCreation(http::Body & /* body */, http::Header & /* header */) { return http::Request::CONTINUE; }
 
     ///
     /// \fn virtual void headerModifier(http::Header &)
@@ -128,7 +128,7 @@ namespace okapi
     /// \return The status of the request being generated, this allows to continue or abort the request
     ///
 
-    virtual http::Request::Status headerModifier(http::Header &) { return http::Request::CONTINUE; }
+    virtual http::Request::Status headerModifier(http::Header & /* header */) { return http::Request::CONTINUE; }
 
     ///
     /// \fn virtual void bodyModifier(http::Body &)
@@ -137,7 +137,7 @@ namespace okapi
     /// \return The status of the request being generated, this allows to continue or abort the request
     ///
 
-    virtual http::Request::Status bodyModifier(http::Body &) { return http::Request::CONTINUE; }
+    virtual http::Request::Status bodyModifier(http::Body & /* body */) { return http::Request::CONTINUE; }
 
     ///
     /// \fn virtual void onResponseReady(http:Response &)
@@ -145,7 +145,7 @@ namespace okapi
     /// \param response The http response object to be treated
     ///
 
-    virtual void onResponseReady(http::Response &) {}
+    virtual void onResponseReady(http::Response & /* response */) {}
 
     ///
     /// \fn virtual void onDataWrite(std::string const &, std::vector<char> &)
@@ -154,7 +154,7 @@ namespace okapi
     /// \param data The raw data that is going to be sent, modify it as you wish
     ///
 
-    virtual void onDataWrite(IConnection const &, std::string const &, std::vector<char> &) {}
+    virtual void onDataWrite(IConnection const & /* connection */, std::string const & /* protocol */, std::vector<char> & /* data */) {}
 
     ///
     /// virtual void onResponseSent(http::Response const &)
@@ -162,7 +162,7 @@ namespace okapi
     /// \param response The http reponse object that has been sent
     ///
 
-    virtual void onResponseSent(http::Response const &) {}
+    virtual void onResponseSent(http::Response const & /* response */) {}
 
     ///
     /// \fn virtual void onServerStop(void)
