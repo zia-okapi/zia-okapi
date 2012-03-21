@@ -5,6 +5,8 @@
 /// \file Request.hh
 ///
 
+# include <string>
+
 # include "Body.hh"
 # include "Header.hh"
 
@@ -86,11 +88,20 @@ namespace okapi
 
       void  setMethod(Method const method);
 
+      ///
+      /// \fn std::string &getUrl(void);
+      /// \brief Returns a mutable reference to the URL field of the request
+      /// \return The reference to the string containing the url of the request
+      ///
+
+      std::string &getUrl(void);
+
     private:
 
       Header _header;
       Body _body;
       Method _method;
+      std::string _url;
     };
 
   }
